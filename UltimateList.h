@@ -8,7 +8,7 @@ using namespace std;
 template <typename T>struct ListElement {
 	T value;
 	ListElement* next;
-	ListElement(T t) : next(NULL), value(t) {}
+	ListElement(T t) : value(t), next(nullptr)  {}
 };
 
 template <typename T>class List {
@@ -16,12 +16,12 @@ protected:
 	ListElement<T>* head;
 	unsigned short size;
 public:
-	List() : head(NULL), size(NULL) {};
+	List() : head(nullptr), size(0) {};
 	~List() {
 		size = 0;
 		ListElement<T>* ptr = head;
-		ListElement<T>* prev = NULL;
-		while (ptr != NULL)
+		ListElement<T>* prev = nullptr;
+		while (ptr != nullptr)
 		{
 			prev = ptr;
 			ptr = ptr->next;
@@ -35,7 +35,7 @@ public:
 		else
 		{
 			ListElement<T>* ptr = head;
-			while (ptr->next != NULL)
+			while (ptr->next != nullptr)
 			{
 				ptr = ptr->next;
 			}
@@ -52,7 +52,7 @@ public:
 		{
 			ListElement<T>* ptr = head;
 			ListElement<T>* prev = head;
-			while (ptr->next != NULL && ptr->value < t)		//stop if act is bigger or next is null
+			while (ptr->next != nullptr && ptr->value < t)		//stop if act is bigger or next is nullptr
 			{
 				prev = ptr;
 				ptr = ptr->next;
@@ -69,7 +69,7 @@ public:
 				prev->next = ptr2;
 				ptr2->next = ptr;
 			}
-			else if (ptr->next == NULL)
+			else if (ptr->next == nullptr)
 			{
 				ptr->next = ptr2;
 			}
@@ -79,7 +79,7 @@ public:
 
 	void printElements() {
 		ListElement<T>* ptr = head;
-		while (ptr != NULL)
+		while (ptr != nullptr)
 		{
 			cout << ptr->value << endl;
 			ptr = ptr->next;
@@ -89,8 +89,8 @@ public:
 	void reverseList() {
 		ListElement<T> *current, *prev, *next;
 		current = head;
-		prev = NULL;
-		while (current != NULL) {
+		prev = nullptr;
+		while (current != nullptr) {
 			next = current->next;
 			current->next = prev;
 			prev = current;
@@ -104,7 +104,7 @@ public:
 		ListElement<T> *element;
 		unsigned short int curr;
 	public:
-		iterator(List<T>* L, unsigned short i) : _L(L), curr(i), element(NULL) {
+		iterator(List<T>* L, unsigned short i) : _L(L), element(nullptr), curr(i) {
 			ListElement<T>* ptr = _L->head;
 			int n = 0;
 			while (n <= _L->size && n != curr)
