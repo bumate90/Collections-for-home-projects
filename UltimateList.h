@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 template <typename T>struct ListElement {
 	T value;
 	ListElement* next;
@@ -81,7 +79,7 @@ public:
 		ListElement<T>* ptr = head;
 		while (ptr != nullptr)
 		{
-			cout << ptr->value << endl;
+			std::cout << ptr->value << std::endl;
 			ptr = ptr->next;
 		}
 	}

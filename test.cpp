@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[])
 {
-    List<string> *myUltimateList = new List<string>();
+/*     List<string> *myUltimateList = new List<string>();
     
     myUltimateList->addElement("This ");
     
@@ -12,8 +12,12 @@ int main(int argc, char* argv[])
     myUltimateList->addElement("test!");
 
     for(auto& x: *myUltimateList)
-        cout<<x.value;
+        cout<<x.value; */
 
-    cout<<endl;
-    
+    List<std::string> L;
+    L.addElement("TEST");
+    for(auto& x: L)
+    {
+        std::cout<<x.value<<std::endl;
+    }    
 }
