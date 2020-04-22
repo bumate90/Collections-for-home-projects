@@ -113,8 +113,8 @@ public:
 			element = ptr;
 		}
 
-		ListElement<T>& operator*() {
-			return *element;
+		T& operator*() {
+			return element->value;
 		}
 
 		iterator& operator++() {
