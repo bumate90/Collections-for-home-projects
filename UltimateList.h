@@ -79,7 +79,9 @@ public:
 		ListElement<T>* ptr = head;
 		while (ptr != nullptr)
 		{
-			std::cout << ptr->value << std::endl;
+			std::cout << ptr->value;
+			if(ptr->next != nullptr)
+				std::cout<<", ";
 			ptr = ptr->next;
 		}
 	}
